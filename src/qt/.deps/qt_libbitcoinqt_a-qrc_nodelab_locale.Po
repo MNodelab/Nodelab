@@ -1,0 +1,1 @@
+qt/qt_libbitcoinqt_a-qrc_nodelab_locale.o: qt/qrc_nodelab_locale.cpp

@@ -1,0 +1,3 @@
+debian/manpages/nodelabd.1
+debian/manpages/nodelab.conf.5
+debian/manpages/nodelab-cli.1

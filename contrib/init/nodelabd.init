@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  nodelabd The NodeLab Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: nodelabd
+# processname: nodelabd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/nodelabd, see below
+if [ -f /etc/sysconfig/nodelabd ]; then
+        . /etc/sysconfig/nodelabd
+fi
+
+RETVAL=0
+
+prog=nodelabd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/nodelabd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/nodelabd}
+
+# nodelabd defaults to /usr/bin/nodelabd, override with BITCOIND_BIN
+nodelabd=${BITCOIND_BIN-/usr/bin/nodelabd}
+
+# nodelabd opts default to -disablewallet, override with BITCOIND_OPTS
+nodelabd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $nodelabd $nodelabd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

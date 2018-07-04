@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/nodelab_bg.qm</file>
+        <file alias="de">locale/nodelab_de.qm</file>
+        <file alias="en">locale/nodelab_en.qm</file>
+        <file alias="es">locale/nodelab_es.qm</file>
+        <file alias="fi">locale/nodelab_fi.qm</file>
+        <file alias="fr">locale/nodelab_fr.qm</file>
+        <file alias="it">locale/nodelab_it.qm</file>
+        <file alias="ja">locale/nodelab_ja.qm</file>
+        <file alias="pl">locale/nodelab_pl.qm</file>
+        <file alias="pt">locale/nodelab_pt.qm</file>
+        <file alias="ru">locale/nodelab_ru.qm</file>
+        <file alias="sk">locale/nodelab_sk.qm</file>
+        <file alias="sv">locale/nodelab_sv.qm</file>
+        <file alias="vi">locale/nodelab_vi.qm</file>
+        <file alias="zh_CN">locale/nodelab_zh_CN.qm</file>
+        <file alias="zh_TW">locale/nodelab_zh_TW.qm</file>
+    </qresource>
+</RCC>

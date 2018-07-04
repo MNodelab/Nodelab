@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NodeLab
+Comment=NodeLab P2P Cryptocurrency
+Exec=nodelab-qt %u
+Terminal=false
+Type=Application
+Icon=nodelab128
+MimeType=x-scheme-handler/nodelab;
+Categories=Office;Finance;
+Name[ru_RU]=nodelab-qt.desktop.desktop
